@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // NEW
 import ContainedButtons from './MaterialButton';
+import PrimarySearchAppBar from './PrimarySearchAppBar';
 
 function App() {
     return (
@@ -16,8 +17,8 @@ export default App;
 
 if (document.getElementById('root')) {
     ReactDOM.render(
-        <React.Fragment>
-            <App />
+        <React.Fragment>                        
+            <PrimarySearchAppBar />
             <ContainedButtons />
         </React.Fragment>, 
     document.getElementById('root'));
