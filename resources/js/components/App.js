@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {
+    HashRouter,
+    Route,
+    Link
+} from 'react-router-dom';
 
 // NEW
 import ContainedButtons from './MaterialButton';
 import PrimarySearchAppBar from './PrimarySearchAppBar';
 
-function App() {
-    return (
-        <div className="container">
-            <h3 className="text-center">Main Page</h3>
-        </div>
-    );
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
+        return (
+             <HashRouter>
+                {/*<Link to="/" replace>Home</Link>*/}
+                <Route path="/" component={PrimarySearchAppBar}/>
+            </HashRouter>
+        );
+    }
 }
 
 export default App;
 
 if (document.getElementById('root')) {
     ReactDOM.render(
-        <React.Fragment>                        
-            <PrimarySearchAppBar />
-            <ContainedButtons />
-        </React.Fragment>, 
+        <App />, 
     document.getElementById('root'));
 }
